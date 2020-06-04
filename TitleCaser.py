@@ -14,7 +14,7 @@ def tc(x, excpt):
     for word in x[1:-1]:
         # If the word is found in the excpt array...
         if word in excpt:
-            # The word is appended to new_array as is (lowercase).
+            # The word is appended to new_arr as is (lowercase).
             new_arr.append(word)
         else:
             # Else if it is not found in excpt, the capitalized version is appended to new_arr.
