@@ -3,7 +3,7 @@
 noCap = ["and", "as", "but", "for", "nor", "or", "yet", "a", "an", "the", "at",
          "in", "by", "of", "on", "to"]
 
-# A function tc (title case) is takes in two parameters, x being the user's input, and the list of exceptions.
+# A function tc (title case) takes in two parameters, x being the user's input, and the list of exceptions.
 def tc(x, excpt):
 
     # x is modified into lowercase, then split at each space, resulting in an array of the lowercase words.
@@ -26,5 +26,5 @@ def tc(x, excpt):
 
 # The user is prompted to enter their string of words.
 strInput = input("Enter the words you would like to title case:\n")
-# The function tc
+# The result of function tc, with arguments strInput and noCap, are printed to the console.
 print(tc(strInput, noCap))
