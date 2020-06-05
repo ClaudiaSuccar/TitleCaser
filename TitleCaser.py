@@ -1,4 +1,4 @@
-# According to ALA format, these words should not be capitalized if they are not the first or last words of the title.
+# According to APA format, these words should not be capitalized if they are not the first or last words of the title.
 # The list of words to be left lowercase, given the right context, are stored in the list, nocap.
 nocap = ["and", "as", "but", "for", "nor", "or", "yet", "a", "an", "the", "at",
          "in", "by", "of", "on", "to"]
