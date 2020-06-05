@@ -1,10 +1,9 @@
 # TitleCaser
 Converts a string to a formalized title, avoiding capitalization of words such as 'and' or 'the' in the right context.
 
-1. According to ALA format, the following words should not be capitalized if they are not the first or last words of the title. The list of words to be left lowercase, given the right context, are stored in the array, noCap.
-
+1. According to ALA format, these words should not be capitalized if they are not the first or last words of the title.
 ```python
-noCap = ["and", "as", "but", "for", "nor", "or", "yet", "a", "an", "the", "at",
+nocap = ["and", "as", "but", "for", "nor", "or", "yet", "a", "an", "the", "at",
          "in", "by", "of", "on", "to"]
 ```
 
@@ -13,39 +12,41 @@ noCap = ["and", "as", "but", "for", "nor", "or", "yet", "a", "an", "the", "at",
 def tc(x, excpt):
 ```
 
-3. x is modified into lowercase, then split at each space, resulting in an array of the lowercase words.
+3. x is modified into lowercase, then split at each space, resulting in a list of the lowercase words.
 ```python
 x = x.lower().split(' ')
 ```
 
-4. The array new_arr is initialized with the requirement that the first word must be capitalized.
+4. The list newlist is initialized with the requirement that the first word must be capitalized.
 ```python
-new_arr = [x[0].capitalize()]
+newlist = [x[0].capitalize()]
 ```
 
-5. The for loop iterates from the second word and stops at, but does not include, the last word.
+5. The for loop iterates from the second word and stops at, but does not include, the last word. Its function is to capitalize all
+words, with the exception of the words contained in nocap.
 ```python
-for word in x[1:-1]:
+    for word in x[1:-1]:
+        # If the word is found in the excpt list...
+        if word in excpt:
+            # The word is appended to newlist as is (lowercase).
+            newlist.append(word)
+        else:
+            # Else if it is not found in excpt, the capitalized version is appended to newlist.
+            newlist.append(word.capitalize())
 ```
 
-6. If the word is found in the excpt array, the word is appended to new_arr as is (lowercase).
+6. Lastly, the final word is appended to newlist, with the requirement that the last word must be capitalized.
 ```python
-if word in excpt:
-  new_arr.append(word)
+newlist.append(x[-1].capitalize())
 ```
 
-8. Else if it is not found in excpt, the capitalized version is appended to new_arr.
+7. The function tc returns joined newlist, with words separated by an empty space.
 ```python
-else:
-  new_arr.append(word.capitalize())
+return ' '.join(newlist)
 ```
 
-9. Lastly, the final word is appended to new_arr, with the requirement that the last word must be capitalized.
-```python
-new_arr.append(x[-1].capitalize())
-```
-
-10. The function tc returns joined new_arr, with words separated by an empty space.
-```python
-return ' '.join(new_arr)
-```
+# What I Learned
+- String methods, such as .lower(), .split(), and .capitalize()
+- List methods, such as .append() and .join()
+- List slicing
+- The 'in' keyword
