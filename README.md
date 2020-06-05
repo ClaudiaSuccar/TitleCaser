@@ -1,7 +1,7 @@
 # TitleCaser
 Converts a string to a formalized title, avoiding capitalization of words such as 'and' or 'the' in the right context.
 
-1. According to ALA format, these words should not be capitalized if they are not the first or last words of the title.
+1. According to APA format, these words should not be capitalized if they are not the first or last words of the title.
 ```python
 nocap = ["and", "as", "but", "for", "nor", "or", "yet", "a", "an", "the", "at",
          "in", "by", "of", "on", "to"]
