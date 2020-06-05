@@ -45,6 +45,22 @@ newlist.append(x[-1].capitalize())
 return ' '.join(newlist)
 ```
 
+## Output Examples
+```
+Input:
+whAt HAvE wE cOme tO
+
+Output:
+What Have We Come To
+```
+```
+Input:
+tHe boY Of the NiLe In tHe wESt
+
+Output:
+The Boy of the Nile in the West
+```
+
 # What I Learned
 - String methods, such as .lower(), .split(), and .capitalize()
 - List methods, such as .append() and .join()
